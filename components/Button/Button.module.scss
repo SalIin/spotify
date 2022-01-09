@@ -1,0 +1,51 @@
+@import "../../styles/variables.scss";
+
+@mixin outlineBtn {
+  background-color: transparent;
+  color: $white;
+}
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  color: $black;
+  border-radius: 16px;
+  font-size: 1rem;
+  padding: 0.5em 2em;
+  transition: all $transition-duration ease;
+  border: 1px solid $white;
+
+  &-Icon {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    @include outlineBtn;
+  }
+
+  &_outlined {
+    @include outlineBtn;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  &_text {
+    color: $silver;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+}

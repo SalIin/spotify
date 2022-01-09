@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+
+.Sidebar {
+  font-size: 0.875rem;
+  padding: 25px 15px;
+  color: $silver;
+
+  &-Section:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  &-Item {
+    margin-bottom: 7px;
+  }
+
+  &-Button {
+    font-size: inherit;
+  }
+}
