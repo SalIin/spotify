@@ -5,7 +5,7 @@ import { HTMLAttributes, ReactNode, useEffect, useState } from "react";
 import styles from "./Button.module.scss";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  label: string;
+  label?: string;
   as?: "button" | "link";
   variant?: "contained" | "outlined" | "text";
   href?: "string";
@@ -13,7 +13,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  label,
+  label = "",
   as = "button",
   variant = "contained",
   href = "/",
@@ -51,7 +51,7 @@ export const Button: React.FC<ButtonProps> = ({
           {...restProps}
         >
           {icon && <div className={styles["Button-Icon"]}>{icon}</div>}
-          <p>{label}</p>
+          {label && <p>{label}</p>}
         </button>
       );
   }

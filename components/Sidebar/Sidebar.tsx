@@ -11,6 +11,7 @@ import { v4 as uuid } from "uuid";
 import Button from "../Button";
 
 import styles from "./Sidebar.module.scss";
+import { signOut } from "next-auth/react";
 
 const sidebarFirstSection = [
   { id: uuid(), label: "Home", icon: <MdHome /> },
@@ -28,6 +29,7 @@ export const Sidebar: React.FC = () => {
   return (
     <aside className={styles.Sidebar}>
       <ul className={styles["Sidebar-Section"]}>
+        <Button label="Sign Out" onClick={() => signOut()} />
         {sidebarFirstSection.map(({ id, label, icon }) => (
           <li className={styles["Sidebar-Item"]} key={id}>
             <Button

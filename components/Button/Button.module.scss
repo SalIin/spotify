@@ -27,6 +27,15 @@
       width: 20px;
       height: 20px;
     }
+
+    &:only-child {
+      margin-right: 0;
+
+      svg {
+        width: auto;
+        height: 30px;
+      }
+    }
   }
 
   &:hover {
